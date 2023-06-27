@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - configure-pipe
 
 env:
   DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
