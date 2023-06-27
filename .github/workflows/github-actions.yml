@@ -26,5 +26,5 @@ jobs:
           docker build -t bark:latest .
       - name: Push Docker image
         run: |
-          docker tag bark:latest ${{ env.DOCKER_USERNAME }}/bark:latest
-          docker push ${{ env.DOCKER_USERNAME }}/bark:latest
+          docker tag bark:latest ${{ env.DOCKERHUB_USERNAME }}/bark:latest
+          docker push ${{ env.DOCKERHUB_USERNAME }}/bark:latest
