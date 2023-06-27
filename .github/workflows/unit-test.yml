@@ -1,16 +1,26 @@
-steps:
-- uses: actions/checkout@v3
-- name: Set up Python
-  uses: actions/setup-python@v4
-  with:
-    python-version: '3.11.3'
-- name: Install dependencies
-  run: |
-    apt update -y
-    apt install -y python3-pip
+name: Unit Test
+on: 
+  push:
+    branches:
+      - main
+      - configure-pipe
 
-    pip3 install .
-    pip3 install -e '.[dev]' 
-- name: Test with pytest
-  run: |
-    pytest
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11.3'
+    - name: Install dependencies
+      run: |
+        apt update -y
+        apt install -y python3-pip
+
+        pip3 install .
+        pip3 install -e '.[dev]' 
+    - name: Test with pytest
+      run: |
+        pytest
