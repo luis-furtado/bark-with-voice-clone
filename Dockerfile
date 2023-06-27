@@ -12,13 +12,13 @@ WORKDIR /root
 
 COPY . .
 
-# Download the ParlAI Github repo
-RUN git clone https://github.com/luis-furtado/bark-with-voice-clone.git ~/bark2
+# Download the Bark Github repo
+RUN git clone https://github.com/luis-furtado/bark-with-voice-clone.git ~/app
 
-RUN cd ~/bark2
+RUN cd ~/app
 
 # Install dependencies and dev dependencies to run tests
-RUN cd ~/bark2 && \
+RUN cd ~/app && \
     pip3 install . && \
     pip3 install -e '.[dev]' 
 
