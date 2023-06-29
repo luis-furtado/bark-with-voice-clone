@@ -2,8 +2,7 @@ name: Python Linter
 on: 
   push:
     branches:
-      - main
-      - configure-pipe
+      - '*'
 
 jobs:
   docs:

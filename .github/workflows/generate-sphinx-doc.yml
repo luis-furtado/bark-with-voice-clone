@@ -2,8 +2,7 @@ name: Docs Build And Check
 on: 
   push:
     branches:
-      - main
-      - configure-pipe
+      - '*'
 
 jobs:
   docs:

@@ -1,10 +1,8 @@
 name: Build and Push Docker Image
-
-on:
+on: 
   push:
     branches:
-      - main
-      - configure-pipe
+      - '*'
 
 env:
   DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
